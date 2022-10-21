@@ -23,9 +23,10 @@
     @include("layout.sidebar")
 
     <div class="content-wrapper ">
+        @include("layout.messages")
         <div class="content-header">
             <div class="container-fluid">
-                @yield("content_header")
+                <h1>@yield("content_header")</h1>
             </div>
         </div>
 
@@ -41,6 +42,7 @@
 <script src="http://127.0.0.1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="http://127.0.0.1/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script src="http://127.0.0.1/vendor/adminlte/dist/js/adminlte.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @yield("js")
 </body>
 </html>

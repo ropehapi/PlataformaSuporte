@@ -12,6 +12,14 @@ class Customer extends Model
     use SoftDeletes;
 
     public $timestamps = true;
+
     protected $table = "customer";
-    protected $fillable = [];
+
+    protected $fillable = [
+        "name",
+        "email",
+        "document",
+        "mobile_number",
+        "status",
+    ];
 }

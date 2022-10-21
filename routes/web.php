@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/customer", [\App\Http\Controllers\CustomerController::class, "create"])->name("createCustomer");
