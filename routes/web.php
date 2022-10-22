@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get("/customer", [\App\Http\Controllers\CustomerController::class, "create"])->name("createCustomer");
+Route::post("/customer", [\App\Http\Controllers\CustomerController::class, "store"])->name("storeCustomer");

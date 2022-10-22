@@ -11,7 +11,8 @@
                 <h3 class="card-title">{{__("Cadastrar cliente")}}</h3>
             </div>
 
-            <form>
+            <form method="POST" action="{{route("storeCustomer")}}">
+                @csrf
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-6">

@@ -23,7 +23,6 @@
     @include("layout.sidebar")
 
     <div class="content-wrapper ">
-        @include("layout.messages")
         <div class="content-header">
             <div class="container-fluid">
                 <h1>@yield("content_header")</h1>
@@ -31,6 +30,7 @@
         </div>
 
         <div class="content">
+            @include("layout.messages")
             <div class="container-fluid">
                 @yield("content")
             </div>
