@@ -26,8 +26,8 @@ class StoreCustomerRequest extends FormRequest
         return [
             "name" => "required|max:64",
             "email" => "required|email|max:64",
-            "document" => "required|max:32",
-            "mobile_phone" => "required|max:32",
+            "document" => "required|max:18",
+            "mobile_phone" => "required|max:14",
         ];
     }
 
@@ -40,9 +40,9 @@ class StoreCustomerRequest extends FormRequest
             "email.email" => __("Email deve estar no formato email."),
             "email.max" => __("Email deve conter no máximo 64 caracteres."),
             "document.required" => __("Documento é obrigatório."),
-            "document.max" => __("Documento deve conter no máximo 32 caracteres."),
+            "document.max" => __("Documento deve conter no máximo 14 caracteres."),
             "mobile_phone.required" => __("Celular é obrigatório."),
-            "mobile_phone.max" => __("Celular deve conter no máximo 32 caracteres.")
+            "mobile_phone.max" => __("Celular deve conter no máximo 11 caracteres.")
         ];
     }
 }

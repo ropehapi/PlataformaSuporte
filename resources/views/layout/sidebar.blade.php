@@ -36,14 +36,14 @@
 
                 <li class="nav-item has-treeview ">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-fw fa-wallet"></i><p>Carteiras<i class="fas fa-angle-left right"></i></p>
+                        <i class="fas fa-fw fa-user"></i><p>{{__("Clientes")}}<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a class="nav-link" href="">Minhas carteiras</a>
+                            <a class="nav-link" href="{{route("customers")}}"><p>{{_("Clientes")}}</p></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><p>Cadastrar carteira</p></a>
+                            <a class="nav-link" href="{{route("createCustomer")}}"><p>{{__("Cadastrar cliente")}}</p></a>
                         </li>
                     </ul>
                 </li>

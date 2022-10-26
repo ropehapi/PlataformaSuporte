@@ -2,27 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Models\Customer;
+use Cassandra\Custom;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $customers = Customer::all();
+        return view("root.customer.index", [
+            "customers" => $customers
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view("root.customer.create");
@@ -38,7 +33,14 @@ class CustomerController extends Controller
     {
         $customer = new Customer();
         $customer->name = $request->name;
+        $customer->email = $request->email;
+        $customer->document = Helper::removeMask($request->document);
+        $customer->mobile_phone = Helper::removeMask($request->mobile_phone);
+        $customer->status = Customer::ACTIVE;
+
         $customer->save();
+
+        return redirect()->route("customers")->withStatus(__("Cliente cadastrado com sucesso."));
     }
 
     /**

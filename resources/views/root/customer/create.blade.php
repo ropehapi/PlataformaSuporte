@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>{{__("Documento")}}</label>
-                            <input type="text" class="form-control" name="document" id="document" placeholder="{{__("Ex: ID Brasil Sistemas")}}">
+                            <input onkeyup="return changeDocumentType(this.value)" maxlength="18" type="text" class="form-control" name="document" id="document" placeholder="{{__("Ex: ID Brasil Sistemas")}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label>{{__("Celular")}}</label>
@@ -48,8 +48,15 @@
 @section("js")
     <script>
         $(document).ready(function(){
-           $("#document").mask("999.999.999-99");
-            $("#mobile_phone").mask("(99)99999-9999");
+           $("#mobile_phone").mask("(99)99999-9999");
         });
+
+        function changeDocumentType(document){
+            if(document.length <= 14){
+                $('#document').mask('###.###.###-##');
+            }else{
+                $('#document').mask('##.###.###/####-##');
+            }
+        }
     </script>
 @endsection
