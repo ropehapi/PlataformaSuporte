@@ -23,12 +23,6 @@ class CustomerController extends Controller
         return view("root.customer.create");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreCustomerRequest $request)
     {
         $customer = new Customer();
@@ -43,48 +37,36 @@ class CustomerController extends Controller
         return redirect()->route("customers")->withStatus(__("Cliente cadastrado com sucesso."));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
     public function show(Customer $customer)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Customer $customer)
     {
-        //
+        return view("root.customer.create",[
+            "customer" => $customer
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Customer $customer)
+    public function update(StoreCustomerRequest $request, Customer $customer)
     {
-        //
+        $customer->name = $request->name;
+        $customer->email = $request->email;
+        $customer->document = Helper::removeMask($request->document);
+        $customer->mobile_phone = Helper::removeMask($request->mobile_phone);
+        $customer->status = Customer::ACTIVE;
+
+        $customer->update();
+
+        return redirect()->route("customers")->withStatus(__("Cliente alterado com sucesso."));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Customer $customer)
+    public function destroy(Request $request)
     {
-        //
+        $customer = Customer::find($request->id);
+        $customer->delete();
+
+        return redirect()->route("customers")->withStatus(__("Cliente excluído com sucesso."));
     }
 }

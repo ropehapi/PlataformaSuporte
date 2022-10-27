@@ -20,23 +20,9 @@
                     </div>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1/admin/pages">
-                        <i class="far fa-fw fa-file "></i><p>Pages<span class="badge badge-success right">4</span></p>
-                    </a>
-                </li>
-                <li class="nav-header ">
-                    ACCOUNT SETTINGS
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link  " href="http://127.0.0.1/admin/settings">
-                        <i class="fas fa-fw fa-user "></i><p>Profile</p>
-                    </a>
-                </li>
-
                 <li class="nav-item has-treeview ">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-fw fa-user"></i><p>{{__("Clientes")}}<i class="fas fa-angle-left right"></i></p>
+                        <i class="fas fa-fw fa-users"></i><p> {{__("Clientes")}}<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
@@ -46,20 +32,6 @@
                             <a class="nav-link" href="{{route("createCustomer")}}"><p>{{__("Cadastrar cliente")}}</p></a>
                         </li>
                     </ul>
-                </li>
-
-                <li class="nav-header">LABELS</li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-fw fa-circle text-red"></i><p>Important</p></a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-fw fa-circle text-yellow"></i><p>Warning</p></a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-fw fa-circle text-cyan"></i><p>Information</p></a>
                 </li>
             </ul>
         </nav>
