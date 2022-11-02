@@ -36,5 +36,11 @@
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{route("logout")}}" role="button" title="{{__("Sair")}}">
+                <i class="fas fa-power-off"></i>
+            </a>
+        </li>
     </ul>
 </nav>
