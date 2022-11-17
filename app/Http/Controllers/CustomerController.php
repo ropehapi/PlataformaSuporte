@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\Helper;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Models\Customer;
+use App\Models\User;
 use Cassandra\Custom;
 use Illuminate\Http\Request;
 
@@ -31,8 +32,15 @@ class CustomerController extends Controller
         $customer->document = Helper::removeMask($request->document);
         $customer->mobile_phone = Helper::removeMask($request->mobile_phone);
         $customer->status = Customer::ACTIVE;
-
         $customer->save();
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = sha1(Helper::removeMask($request->document));
+        $user->profile = User::CUSTOMER_ADMIN;
+        $user->customer_id = $customer->id;
+        $user->save();
 
         return redirect()->route("customers")->withStatus(__("Cliente cadastrado com sucesso."));
     }

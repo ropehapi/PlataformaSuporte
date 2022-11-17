@@ -1,6 +1,6 @@
 ### Plataforma suporte
 
-Desenvolvido em 2022, o [SistemaSuporte]("https://github.com/ropehapi/SistemaSuporte") é uma plataforma que visa solucionar demandas de suporte.
+Desenvolvido em 2022, o [PlataformaSuporte]("https://github.com/ropehapi/PlataformaSuporte") é uma plataforma que visa solucionar demandas de suporte.
 
 ### Funcionalidades
 - Cadastro de tickets
