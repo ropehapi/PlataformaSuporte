@@ -30,3 +30,9 @@ Route::middleware("root")->group(function (){
     Route::delete("/customer", [\App\Http\Controllers\CustomerController::class, "destroy"])->name("deleteCustomer");
 
 });
+
+Route::middleware("customerAdmin")->group(function() {
+    Route::get("/aaa",function (){
+       dd("KKKKKKKKKKKKK");
+    });
+});

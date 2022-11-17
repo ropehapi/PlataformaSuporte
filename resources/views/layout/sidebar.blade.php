@@ -20,6 +20,7 @@
                     </div>
                 </li>
 
+                @if(Session("profile") === \App\Models\User::ROOT)
                 <li class="nav-item has-treeview ">
                     <a class="nav-link" href="#">
                         <i class="fas fa-fw fa-users"></i><p> {{__("Clientes")}}<i class="fas fa-angle-left right"></i></p>
@@ -33,6 +34,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
             </ul>
         </nav>
     </div>
