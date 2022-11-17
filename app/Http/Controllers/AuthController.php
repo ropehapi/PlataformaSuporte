@@ -23,6 +23,10 @@ class AuthController extends Controller
                     $this->buildRootSession($user);
                     return redirect()->route("home");
                 }
+                if($user->profile === User::CUSTOMER_ADMIN){
+                    $this->buildCustomerAdminSession($user);
+                    return redirect()->route("home");
+                }
             }
         }
 
@@ -36,6 +40,12 @@ class AuthController extends Controller
     }
 
     public function buildRootSession(User $user)
+    {
+        Session::put("profile", $user->profile);
+        Session::put("user", $user);
+    }
+
+    public function buildCustomerAdminSession(User $user)
     {
         Session::put("profile", $user->profile);
         Session::put("user", $user);
