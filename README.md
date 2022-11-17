@@ -37,6 +37,4 @@ Desenvolvido em 2022, o [SistemaSuporte]("https://github.com/ropehapi/SistemaSup
 - `$ git clone https://github.com/ropehapi/SistemaSuporte`
 - `$ composer update`
 - `$ php artisan migrate`
-
-### Observações
--Estruturar banco se baseando no que já existe do MySuite
+- `SQL: insert into users (id,name,email,password, profile) values(1,"root","root@plataformasuporte.com","ad415aec8652bfb33b408181b44a3f9643fd74e0","ROOT");`
