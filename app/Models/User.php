@@ -11,6 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     const ROOT = "ROOT";
+    const CUSTOMER_ADMIN = "CUSTOMER_ADMIN";
 
     use HasApiTokens, HasFactory, Notifiable;
 
