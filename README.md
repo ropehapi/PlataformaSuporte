@@ -38,3 +38,6 @@ Desenvolvido em 2022, o [PlataformaSuporte]("https://github.com/ropehapi/Platafo
 - `$ composer update`
 - `$ php artisan migrate`
 - `SQL: insert into users (id,name,email,password, profile) values(1,"root","root@plataformasuporte.com","ad415aec8652bfb33b408181b44a3f9643fd74e0","ROOT");`
+
+### Todo
+- Gerenciamento de empresas
