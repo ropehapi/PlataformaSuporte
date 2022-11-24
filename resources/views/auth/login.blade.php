@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <title>SistemaSuporte</title>
+        <title>PlataformaSuporte</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
             <div class="login-box">
                 <div class="card card-outline card-primary">
                     <div class="card-header text-center">
-                        <a href="" class="h1"><b>Sistema</b>Suporte</a>
+                        <a href="" class="h1"><b>Plat.</b>Suporte</a>
                     </div>
                     <div class="card-body">
                         <p class="login-box-msg">{{__("Faça login para iniciar sua sessão")}}</p>

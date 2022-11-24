@@ -35,6 +35,22 @@
                     </ul>
                 </li>
                 @endif
+
+                @if(Session("profile") === \App\Models\User::CUSTOMER_ADMIN)
+                    <li class="nav-item has-treeview ">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-fw fa-users"></i><p> {{__("Empresas")}}<i class="fas fa-angle-left right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route("companies")}}"><p>{{_("Clientes")}}</p></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route("createCompany")}}"><p>{{__("Cadastrar empresa")}}</p></a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
         </nav>
     </div>
