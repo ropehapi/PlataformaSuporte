@@ -28,11 +28,13 @@ Route::middleware("root")->group(function (){
     Route::get("/customer/{customer}", [\App\Http\Controllers\CustomerController::class, "edit"])->name("editCustomer");
     Route::put("/customer/{customer}", [\App\Http\Controllers\CustomerController::class, "update"])->name("updateCustomer");
     Route::delete("/customer", [\App\Http\Controllers\CustomerController::class, "destroy"])->name("deleteCustomer");
-
 });
 
 Route::middleware("customerAdmin")->group(function() {
-    Route::get("/aaa",function (){
-       dd("KKKKKKKKKKKKK");
-    });
+    Route::get("/companies", [\App\Http\Controllers\CompanyController::class, "index"])->name("companies");
+    Route::get("/company", [\App\Http\Controllers\CompanyController::class, "create"])->name("createCompany");
+    Route::post("/company", [\App\Http\Controllers\CompanyController::class, "store"])->name("storeCompany");
+    Route::get("/company/{company}", [\App\Http\Controllers\CompanyController::class, "edit"])->name("editCompany");
+    Route::put("/company/{company}", [\App\Http\Controllers\CompanyController::class, "update"])->name("updateCompany");
+    Route::delete("/company", [\App\Http\Controllers\CompanyController::class, "destroy"])->name("deleteCompany");
 });
