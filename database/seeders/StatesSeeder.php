@@ -1,10 +1,13 @@
 <?php
 
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class StatesTableSeeder extends Seeder
+class StatesSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -182,5 +185,4 @@ class StatesTableSeeder extends Seeder
         ]);
 
     }
-
 }
