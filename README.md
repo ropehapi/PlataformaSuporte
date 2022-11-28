@@ -42,4 +42,3 @@ Desenvolvido em 2022, o [PlataformaSuporte]("https://github.com/ropehapi/Platafo
 ### Todo
 - Estrutura e fluxo da entidade empresa
 - Estrutura de endereços que será utilizado para todas as demais entidades
-- Fazer um seeder para o usuario root
