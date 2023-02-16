@@ -28,17 +28,26 @@ Desenvolvido em 2022, o [PlataformaSuporte]("https://github.com/ropehapi/Platafo
 - Backend
     - PHP v8.1.2
     - Laravel v9.35.1
+    - Conteinerização via [Laradock](https://laradock.io)
 - Front-end
     - Bootstrap
     - Jquery
     - [Template AdminLTE3](https://github.com/jeroennoten/Laravel-AdminLTE)
 
 ### Instalação
-- `$ git clone https://github.com/ropehapi/SistemaSuporte`
-- `$ composer update`
-- `$ php artisan migrate`
-- `$ php artisan db:seed`
+Para instalar e rodar esse projeto na sua máquina, a aplicação foi conteinerizada utilizando o [Laradock](https://laradock.io), visando prover um ambiente de desenvolvimento homogêneo para qualquer pessoa que seja.
 
-### Todo
-- Estrutura e fluxo da entidade empresa
-- Estrutura de endereços que será utilizado para todas as demais entidades
+Note que nas etapas onde adicionamos a `.env`, é necessário que a parametrizemos de acordo com o projeto, como por exemplo definindo a versão do php para `8.1`, renomeando bancos entre outros.
+
+#### Comandos:
+- `$ git clone https://github.com/ropehapi/SistemaSuporte`
+- `$ git clone https://github.com/Laradock/laradock.git`
+- `$ cd laradock`
+- `$ cp .env.example .env`
+- `$ sudo docker-compose up -d nginx mysql phpmyadmin workspace `
+- `$ sudo docker exec -it <id_container_workspace> bash`
+- `# composer install`
+- `# cp .env.example .env`
+- `# php artisan key:generate`
+- `# php artisan migrate`
+- `# php artisan db:seed`
