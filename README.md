@@ -35,10 +35,13 @@ Desenvolvido em 2022, o [PlataformaSuporte]("https://github.com/ropehapi/Platafo
 
 ### Instalação
 - `$ git clone https://github.com/ropehapi/SistemaSuporte`
-- `$ composer update`
-- `$ php artisan migrate`
-- `$ php artisan db:seed`
+<!-- - `$ composer update` -->
+<!-- - `$ php artisan migrate` -->
+<!-- - `$ php artisan db:seed` -->
 
-### Todo
-- Estrutura e fluxo da entidade empresa
-- Estrutura de endereços que será utilizado para todas as demais entidades
+- git clone https://github.com/Laradock/laradock.git
+- cd laradock
+- cp .env.example .env
+- sudo docker-compose up -d nginx mysql phpmyadmin workspace 
+- sudo docker exec -it 5cc46a bash
+- composer install
