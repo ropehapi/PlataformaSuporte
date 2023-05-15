@@ -43,11 +43,13 @@ Note que nas etapas onde adicionamos a `.env`, é necessário que a parametrizem
 - `$ git clone https://github.com/ropehapi/SistemaSuporte`
 - `$ git clone https://github.com/Laradock/laradock.git`
 - `$ cd laradock`
-- `$ cp .env.example .env`
+- `$ cp .env.example .env` 
+- Configure o PHP e o MySQL no arquivo de configuração do Laradock.
 - `$ sudo docker-compose up -d nginx mysql phpmyadmin workspace `
 - `$ sudo docker exec -it <id_container_workspace> bash`
 - `# composer install`
-- `# cp .env.example .env`
+- `# cp .env.example .env` 
+- Configure a .env de sua aplicação de acordo com os dados passados na .env do laradock, e informe o IP do container do MySQL. (`docker inspect <mysql_container_id> | grep IP`)
 - `# php artisan key:generate`
 - `# php artisan migrate`
 - `# php artisan db:seed`
