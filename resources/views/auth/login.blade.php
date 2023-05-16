@@ -6,14 +6,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="jf2CzyXan1v0MfrTkf8vboSOl1kNO6iLLz8hVAl5">
-        <link rel="stylesheet" href="http://127.0.0.1/vendor/fontawesome-free/css/all.min.css">
+        {{--<link rel="stylesheet" href="http://127.0.0.1/vendor/fontawesome-free/css/all.min.css">--}}
         <link rel="stylesheet" href="http://127.0.0.1/vendor/overlayScrollbars/css/OverlayScrollbars.min.css">
         <link rel="stylesheet" href="http://127.0.0.1/vendor/adminlte/dist/css/adminlte.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     </head>
 
     <body class="hold-transition login-page">
-        <form method="POST" action="{{route("login")}}">
+        <form method="POST" action="{{route('login')}}">
             @csrf
             @include("layout.messages")
             <div class="login-box">
@@ -25,7 +25,7 @@
                         <p class="login-box-msg">{{__("Faça login para iniciar sua sessão")}}</p>
                         <form action="" method="post">
                             <div class="input-group mb-3">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email" autocomplete="false">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-envelope"></span>
@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="false">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-lock"></span>
@@ -54,8 +54,8 @@
                                 </div>
                             </div>
                         </form>
-                        <p class="mb-1"><a href="forgot-password.html">{{_("Esqueci minha senha")}}</a></p>
-                        <p class="mb-0"><a href="register.html" class="text-center">{{_("Cadastrar")}}</a></p>
+                        <p class="mb-1"><a href="forgot-password.html">{{__("Esqueci minha senha")}}</a></p>
+                        <p class="mb-0"><a href="register.html" class="text-center">{{__("Cadastrar")}}</a></p>
                     </div>
                 </div>
             </div>
@@ -65,5 +65,6 @@
         <script src="http://127.0.0.1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="http://127.0.0.1/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
         <script src="http://127.0.0.1/vendor/adminlte/dist/js/adminlte.min.js"></script>
+        <script src="https://kit.fontawesome.com/d5043ff803.js" crossorigin="anonymous"></script>
     </body>
 </html>
