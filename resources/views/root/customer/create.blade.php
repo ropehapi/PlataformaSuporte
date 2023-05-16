@@ -52,11 +52,13 @@
     <script>
         $(document).ready(function(){
            $("#mobile_phone").mask("(99)99999-9999");
-            if({{strlen($customer->document)}} <= 14){
+           @if(isset($customer))
+           if({{strlen($customer->document)}} <= 14){
                 $('#document').mask('###.###.###-##');
             }else{
                 $('#document').mask('##.###.###/####-##');
             }
+           @endif
         });
 
         function changeDocumentType(document){

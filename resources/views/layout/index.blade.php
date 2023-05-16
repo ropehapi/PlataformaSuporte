@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="jf2CzyXan1v0MfrTkf8vboSOl1kNO6iLLz8hVAl5">
-    <link rel="stylesheet" href="http://127.0.0.1/vendor/fontawesome-free/css/all.min.css">
+    {{--<link rel="stylesheet" href="http://127.0.0.1/vendor/fontawesome-free/css/all.min.css">--}}
     <link rel="stylesheet" href="http://127.0.0.1/vendor/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="http://127.0.0.1/vendor/adminlte/dist/css/adminlte.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
@@ -45,6 +45,7 @@
 <script src="http://127.0.0.1/vendor/adminlte/dist/js/adminlte.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+<script src="https://kit.fontawesome.com/d5043ff803.js" crossorigin="anonymous"></script>
 @yield("js")
 </body>
 </html>

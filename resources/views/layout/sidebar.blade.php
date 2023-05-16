@@ -27,7 +27,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route("customers")}}"><p>{{_("Clientes")}}</p></a>
+                            <a class="nav-link" href="{{route("customers")}}"><p>{{__("Clientes")}}</p></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route("createCustomer")}}"><p>{{__("Cadastrar cliente")}}</p></a>
@@ -43,7 +43,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route("companies")}}"><p>{{_("Clientes")}}</p></a>
+                                <a class="nav-link" href="{{route("companies")}}"><p>{{__("Clientes")}}</p></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route("createCompany")}}"><p>{{__("Cadastrar empresa")}}</p></a>

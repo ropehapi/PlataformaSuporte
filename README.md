@@ -53,3 +53,4 @@ Note que nas etapas onde adicionamos a `.env`, é necessário que a parametrizem
 - `# php artisan key:generate`
 - `# php artisan migrate`
 - `# php artisan db:seed`
+- `# chmod -R 777 /var/www/storage/`
