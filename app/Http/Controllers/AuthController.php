@@ -41,13 +41,13 @@ class AuthController extends Controller
 
     public function buildRootSession(User $user)
     {
-        Session::put("profile", $user->profile);
         Session::put("user", $user);
+        Session::put("profile", $user->profile);
     }
 
     public function buildCustomerAdminSession(User $user)
     {
-        Session::put("profile", $user->profile);
         Session::put("user", $user);
+        Session::put("profile", $user->profile);
     }
 }

@@ -39,6 +39,20 @@
                 @if(Session("profile") === \App\Models\User::CUSTOMER_ADMIN)
                     <li class="nav-item has-treeview ">
                         <a class="nav-link" href="#">
+                            <i class="fa-solid fa-gears"></i><p> {{__("Produtos")}}<i class="fas fa-angle-left right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route("products")}}"><p>{{__("Produtos")}}</p></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route("createProduct")}}"><p>{{__("Cadastrar produto")}}</p></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview ">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-fw fa-users"></i><p> {{__("Empresas")}}<i class="fas fa-angle-left right"></i></p>
                         </a>
                         <ul class="nav nav-treeview">

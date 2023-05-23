@@ -19,7 +19,7 @@ Route::get("/", function (){
 
 Route::get("/login", [\App\Http\Controllers\AuthController::class, "loginView"])->name("loginView");
 Route::post("/login", [\App\Http\Controllers\AuthController::class, "login"])->name("login");
-Route::get("logout", [\App\Http\Controllers\AuthController::class, "logout"])->name("logout");
+Route::get("/logout", [\App\Http\Controllers\AuthController::class, "logout"])->name("logout");
 
 Route::middleware("root")->group(function (){
     Route::get("/customers", [\App\Http\Controllers\CustomerController::class, "index"])->name("customers");
@@ -31,6 +31,13 @@ Route::middleware("root")->group(function (){
 });
 
 Route::middleware("customerAdmin")->group(function() {
+    Route::get("/products", [\App\Http\Controllers\ProductController::class, "index"])->name("products");
+    Route::get("/product", [\App\Http\Controllers\ProductController::class, "create"])->name("createProduct");
+    Route::post("/product", [\App\Http\Controllers\ProductController::class, "store"])->name("storeProduct");
+    Route::get("/product/{product}", [\App\Http\Controllers\ProductController::class, "edit"])->name("editProduct");
+    Route::put("/product/{product}", [\App\Http\Controllers\ProductController::class, "update"])->name("updateProduct");
+    Route::delete("/product", [\App\Http\Controllers\ProductController::class, "destroy"])->name("deleteProduct");
+
     Route::get("/companies", [\App\Http\Controllers\CompanyController::class, "index"])->name("companies");
     Route::get("/company", [\App\Http\Controllers\CompanyController::class, "create"])->name("createCompany");
     Route::post("/company", [\App\Http\Controllers\CompanyController::class, "store"])->name("storeCompany");

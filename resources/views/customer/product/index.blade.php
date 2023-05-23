@@ -1,7 +1,7 @@
 @extends("layout.index")
 
 @section("content_header")
-    {{__("Cliente")}}
+    {{__("Produtos")}}
 @endsection
 @section("content")
     <div class="row">
@@ -10,26 +10,18 @@
                 <thead>
                 <tr>
                     <th class="sorting">{{__("Nome")}}</th>
-                    <th class="sorting">{{__("Email")}}</th>
-                    <th class="sorting">{{__("Documento")}}</th>
-                    <th class="sorting">{{__("Celular")}}</th>
-                    <th class="sorting">{{__("Status")}}</th>
                     <th class="sorting">{{__("Ações")}}</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($companies as $company)
+                @foreach($products as $product)
                     <tr>
-                        <td>{{$company->name}}</td>
-                        <td>{{$company->email}}</td>
-                        <td>{{$company->getMaskedDocument()}}</td>
-                        <td>{{$company->getMaskedMobilePhone()}}</td>
-                        <td>{{$company->status}}</td>
+                        <td>{{$product->name}}</td>
                         <td>
-                            <form method="GET" action="{{route("editCompany",$company->id)}}" style="display: inline">
+                            <form method="GET" action="{{route("editProduct",$product->id)}}" style="display: inline">
                                 <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
                             </form>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" onclick="setDeleteModalContent({{$company->id}},'{{$company->name}}')"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" onclick="setDeleteModalContent({{$product->id}},'{{$product->name}}')"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                 @endforeach
@@ -38,7 +30,7 @@
         </div>
     </div>
 
-    <form method="POST" action="{{route('deleteCompany')}}">
+    <form method="POST" action="{{route('deleteProduct')}}">
         @csrf
         @method("DELETE")
         <div class="modal fade" id="modal-danger">
