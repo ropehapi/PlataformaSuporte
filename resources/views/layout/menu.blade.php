@@ -20,33 +20,33 @@
                     </div>
                 </li>
 
-                @if(Session("profile") === \App\Models\User::ROOT)
+                @if(Session("perfil") === \App\Models\User::ROOT)
                 <li class="nav-item has-treeview ">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-fw fa-users"></i><p> {{__("Clientes")}}<i class="fas fa-angle-left right"></i></p>
+                        <i class="fas fa-fw fa-users"></i><p> {{__("Software Houses")}}<i class="fas fa-angle-left right"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route("customers")}}"><p>{{__("Clientes")}}</p></a>
+                            <a class="nav-link" href="{{route("softwareHouses")}}"><p>{{__("Software Houses")}}</p></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route("createCustomer")}}"><p>{{__("Cadastrar cliente")}}</p></a>
+                            <a class="nav-link" href="{{route("createSoftwareHouse")}}"><p>{{__("Cadastrar cliente")}}</p></a>
                         </li>
                     </ul>
                 </li>
                 @endif
 
-                @if(Session("profile") === \App\Models\User::CUSTOMER_ADMIN)
+                @if(Session("perfil") === \App\Models\User::SOFTWARE_HOUSE_ADMIN)
                     <li class="nav-item has-treeview ">
                         <a class="nav-link" href="#">
-                            <i class="fas fa-fw fa-users"></i><p> {{__("Empresas")}}<i class="fas fa-angle-left right"></i></p>
+                            <i class="fas fa-fw fa-users"></i><p> {{__("Clientes")}}<i class="fas fa-angle-left right"></i></p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route("companies")}}"><p>{{__("Clientes")}}</p></a>
+                                <a class="nav-link" href="{{route("clientes")}}"><p>{{__("Clientes")}}</p></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route("createCompany")}}"><p>{{__("Cadastrar empresa")}}</p></a>
+                                <a class="nav-link" href="{{route("createCliente")}}"><p>{{__("Cadastrar cliente")}}</p></a>
                             </li>
                         </ul>
                     </li>

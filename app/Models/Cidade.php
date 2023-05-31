@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class State extends Model
+class Cidade extends Model
 {
 
     use SoftDeletes;
@@ -15,8 +15,7 @@ class State extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'abbr',
+        'nome',
     ];
 
     /**
@@ -29,6 +28,14 @@ class State extends Model
         'updated_at',
     ];
 
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'estado_id' => 'integer',
+    ];
 
     /**
      * The attributes that should be mutated to dates.
@@ -40,12 +47,12 @@ class State extends Model
     ];
 
     /**
-     * Get all of the cities for the state.
+     * Get the state that owns the city.
      */
-    public function city()
+    public function estado()
     {
 
-        return $this->hasMany(City::class);
+        return $this->belongsTo(Estado::class, 'state_id');
 
     }
 

@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('company', function (Blueprint $table) {
+        Schema::create('software_house', function (Blueprint $table) {
             $table->id();
-            $table->string("name","64");
+            $table->string("nome","64");
             $table->string("email","64");
-            $table->string("document","14");
-            $table->string("mobile_phone","11");
+            $table->string("documento","14");
+            $table->string("celular","11");
             $table->string("status","32");
             $table->timestamps();
             $table->softDeletes();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('company');
+        Schema::dropIfExists('software_house');
     }
 };

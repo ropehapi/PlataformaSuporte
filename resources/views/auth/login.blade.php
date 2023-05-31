@@ -15,7 +15,7 @@
     <body class="hold-transition login-page">
         <form method="POST" action="{{route('login')}}">
             @csrf
-            @include("layout.messages")
+            @include("layout.mensagens")
             <div class="login-box">
                 <div class="card card-outline card-primary">
                     <div class="card-header text-center">

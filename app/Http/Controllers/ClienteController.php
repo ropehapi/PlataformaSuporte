@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
 use App\Http\Requests\StoreCompanyRequest;
-use App\Models\Company;
-use App\Models\Customer;
+use App\Models\Cliente;
+use App\Models\SoftwareHouse;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class CompanyController extends Controller
+class ClienteController extends Controller
 {
     public function index()
     {
-        $companies = Company::all();
+        $companies = Cliente::all();
         return view("customer.company.index",[
             "companies" => $companies
         ]);
@@ -21,41 +21,41 @@ class CompanyController extends Controller
 
     public function create()
     {
-        return view("customer.company.create");
+        return view("software_house.company.create");
     }
 
     public function store(StoreCompanyRequest $request)
     {
-        $company = new Company();
+        $company = new Cliente();
         $company->name = $request->name;
         $company->email = $request->email;
         $company->document = Helper::removeMask($request->document);
         $company->mobile_phone = Helper::removeMask($request->mobile_phone);
-        $company->status = Customer::ACTIVE;
+        $company->status = SoftwareHouse::ACTIVE;
         $company->save();
 
         return redirect()->route("companies")->withStatus(__("Empresa cadastrada com sucesso."));
     }
 
-    public function show(Company $customer)
+    public function show(Cliente $softwareHouse)
     {
         //
     }
 
-    public function edit(Company $company)
+    public function edit(Cliente $company)
     {
         return view("customer.company.create",[
             "company" => $company
         ]);
     }
 
-    public function update(StoreCompanyRequest $request, Company $company)
+    public function update(StoreCompanyRequest $request, Cliente $company)
     {
         $company->name = $request->name;
         $company->email = $request->email;
         $company->document = Helper::removeMask($request->document);
         $company->mobile_phone = Helper::removeMask($request->mobile_phone);
-        $company->status = Company::ACTIVE;
+        $company->status = Cliente::ACTIVE;
 
         $company->update();
 
@@ -64,7 +64,7 @@ class CompanyController extends Controller
 
     public function destroy(Request $request)
     {
-        $company = Company::find($request->id);
+        $company = Cliente::find($request->id);
         $company->delete();
 
         return redirect()->route("companies")->withStatus(__("Empresa excluída com sucesso"));

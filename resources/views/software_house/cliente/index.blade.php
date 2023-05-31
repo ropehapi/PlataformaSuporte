@@ -18,18 +18,18 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($companies as $company)
+                @foreach($softwareHouses as $softwareHouse)
                     <tr>
-                        <td>{{$company->name}}</td>
-                        <td>{{$company->email}}</td>
-                        <td>{{$company->getMaskedDocument()}}</td>
-                        <td>{{$company->getMaskedMobilePhone()}}</td>
-                        <td>{{$company->status}}</td>
+                        <td>{{$softwareHouse->nome}}</td>
+                        <td>{{$softwareHouse->email}}</td>
+                        <td>{{$softwareHouse->getDocumento(true)}}</td>
+                        <td>{{$softwareHouse->getCelular(true)}}</td>
+                        <td>{{$softwareHouse->status}}</td>
                         <td>
-                            <form method="GET" action="{{route("editCompany",$company->id)}}" style="display: inline">
+                            <form method="GET" action="{{route("editCompany",$softwareHouse->id)}}" style="display: inline">
                                 <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
                             </form>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" onclick="setDeleteModalContent({{$company->id}},'{{$company->name}}')"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" onclick="setDeleteModalContent({{$softwareHouse->id}},'{{$softwareHouse->name}}')"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                 @endforeach

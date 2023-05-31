@@ -18,7 +18,7 @@ class Root
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Session("profile") === User::ROOT){
+        if(Session("perfil") === User::ROOT){
             return $next($request);
         }
 

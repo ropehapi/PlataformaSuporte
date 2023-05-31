@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Address;
+use App\Models\Endereco;
 use Illuminate\Http\Request;
 
-class AddressController extends Controller
+class EnderecoController extends Controller
 {
     /**
      * Display a listing of the resource.

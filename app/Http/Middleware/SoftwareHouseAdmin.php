@@ -6,7 +6,7 @@ use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 
-class CustomerAdmin
+class SoftwareHouseAdmin
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class CustomerAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Session("profile") === User::CUSTOMER_ADMIN){
+        if(Session("perfil") === User::SOFTWARE_HOUSE_ADMIN){
             return $next($request);
         }
 

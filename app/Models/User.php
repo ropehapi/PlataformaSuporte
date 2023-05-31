@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     const ROOT = "ROOT";
-    const CUSTOMER_ADMIN = "CUSTOMER_ADMIN";
+    const SOFTWARE_HOUSE_ADMIN = "SOFTWARE_HOUSE_ADMIN";
 
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -23,7 +23,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'profile',
+        'perfil',
         'password',
     ];
 

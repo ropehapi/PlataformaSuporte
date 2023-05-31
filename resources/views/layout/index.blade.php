@@ -25,7 +25,7 @@
 
     <div class="content-wrapper ">
         <div class="content-header">
-            @include("layout.messages")
+            @include("layout.mensagens")
             <div class="container-fluid">
                 <h1>@yield("content_header")</h1>
             </div>

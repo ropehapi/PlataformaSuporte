@@ -22,19 +22,19 @@ Route::post("/login", [\App\Http\Controllers\AuthController::class, "login"])->n
 Route::get("logout", [\App\Http\Controllers\AuthController::class, "logout"])->name("logout");
 
 Route::middleware("root")->group(function (){
-    Route::get("/customers", [\App\Http\Controllers\CustomerController::class, "index"])->name("customers");
-    Route::get("/customer", [\App\Http\Controllers\CustomerController::class, "create"])->name("createCustomer");
-    Route::post("/customer", [\App\Http\Controllers\CustomerController::class, "store"])->name("storeCustomer");
-    Route::get("/customer/{customer}", [\App\Http\Controllers\CustomerController::class, "edit"])->name("editCustomer");
-    Route::put("/customer/{customer}", [\App\Http\Controllers\CustomerController::class, "update"])->name("updateCustomer");
-    Route::delete("/customer", [\App\Http\Controllers\CustomerController::class, "destroy"])->name("deleteCustomer");
+    Route::get("/softwareHouses", [\App\Http\Controllers\SoftwareHouseController::class, "index"])->name("softwareHouses");
+    Route::get("/softwareHouse", [\App\Http\Controllers\SoftwareHouseController::class, "create"])->name("createSoftwareHouse");
+    Route::post("/softwareHouse", [\App\Http\Controllers\SoftwareHouseController::class, "store"])->name("storeSoftwareHouse");
+    Route::get("/softwareHouse/{softwareHouse}", [\App\Http\Controllers\SoftwareHouseController::class, "edit"])->name("editSoftwareHouse");
+    Route::put("/softwareHouse/{softwareHouse}", [\App\Http\Controllers\SoftwareHouseController::class, "update"])->name("updateSoftwareHouse");
+    Route::delete("/softwareHouse", [\App\Http\Controllers\SoftwareHouseController::class, "destroy"])->name("deleteSoftwareHouse");
 });
 
-Route::middleware("customerAdmin")->group(function() {
-    Route::get("/companies", [\App\Http\Controllers\CompanyController::class, "index"])->name("companies");
-    Route::get("/company", [\App\Http\Controllers\CompanyController::class, "create"])->name("createCompany");
-    Route::post("/company", [\App\Http\Controllers\CompanyController::class, "store"])->name("storeCompany");
-    Route::get("/company/{company}", [\App\Http\Controllers\CompanyController::class, "edit"])->name("editCompany");
-    Route::put("/company/{company}", [\App\Http\Controllers\CompanyController::class, "update"])->name("updateCompany");
-    Route::delete("/company", [\App\Http\Controllers\CompanyController::class, "destroy"])->name("deleteCompany");
+Route::middleware("softwareHouseAdmin")->group(function() {
+    Route::get("/clientes", [\App\Http\Controllers\ClienteController::class, "index"])->name("clientes");
+    Route::get("/cliente", [\App\Http\Controllers\ClienteController::class, "create"])->name("createCliente");
+    Route::post("/cliente", [\App\Http\Controllers\ClienteController::class, "store"])->name("storeCliente");
+    Route::get("/cliente/{cliente}", [\App\Http\Controllers\ClienteController::class, "edit"])->name("editCliente");
+    Route::put("/cliente/{cliente}", [\App\Http\Controllers\ClienteController::class, "update"])->name("updateCliente");
+    Route::delete("/cliente", [\App\Http\Controllers\ClienteController::class, "destroy"])->name("deleteCliente");
 });

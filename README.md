@@ -54,3 +54,53 @@ Note que nas etapas onde adicionamos a `.env`, é necessário que a parametrizem
 - `# php artisan migrate`
 - `# php artisan db:seed`
 - `# chmod -R 777 /var/www/storage/`
+
+
+### TODO:
+-Root (Nós)
+    -Cadastro de clientes
+    -Cadastro de usuários
+-Customer (Software Houses)
+    -Cadastro de usuários
+    -Cadastro de produtos
+    -Cadastro de clientes
+        -Customer id
+        -Nome
+        -Status
+        -Endereço
+        -Contato
+            -Telefone
+            -Celular
+        -CPF/CNPJ
+        -Sistemas utilizados
+        -Observações
+    -Cadastro de usuários do cliente
+        -Empresa_id
+        -Nome
+    -Cadastro de setor
+    -Cadastro de categoria
+    -Cadastro de classificação
+    -Cadastro de status
+    -Cadastro de tickets
+        -Empresa_id
+        -Usuario_id
+        -Setor_id
+        -Categoria_id
+        -Classificação_id
+        -Status_id
+        -Operador_id
+        -Assunto
+        -Mensagem
+        -Prioridade
+    -Gerenciamento de horas
+        -Tipo
+        -Classificação
+        -Data
+        -Colaborador
+        -Valor hora
+        -Horas
+        -Minutos
+        -Valor total
+        -Descricao
+    -Chat online
+    -Gestão conhecimento
